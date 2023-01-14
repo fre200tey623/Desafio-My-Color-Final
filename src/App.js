@@ -3,10 +3,8 @@ import Form from "./componentes/Form";
 import Card from "./componentes/Card";
 import React,{useState, useEffect} from "react";
 import axios from "axios";
+import Footer from "./componentes/Footer";
 
-
-
-// Tenho que aprender sobre useRef ainda hoje
 
 export default function App(){
     
@@ -36,11 +34,12 @@ export default function App(){
 
     return(
         
-        <div className="relative">
+       <div>
+         <div className="relative">
             <h1 className="pt-4 text-4xl text-center text-gray-800 font-bold">Desafio minhas cores preferidas</h1>
-            <h2 className="text-center">Desevolvido por Andre Lima para o precesso de trainee Softeam</h2>
+            
             <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2">Cores Favoritas:</h2>
-            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" >
+            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5" >
             {respostaData.filter(data => data.isFavorite === true).map(criarCard)}
             </div>
             <div className="sm:flex xs:block items-center justify-center pt-5 ">
@@ -53,7 +52,7 @@ export default function App(){
             </div>
             <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2">Cores Cadastradas:</h2>
             
-            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
+            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 pb-32 lg:pb-44 ">
             {respostaData.filter(data => data.isFavorite === false).map(criarCard)}
             </div>
             
@@ -69,7 +68,12 @@ export default function App(){
                </div>
             
             </div>}
+            
         </div>
+        <div className="relative">
+            <Footer />
+            </div>
+       </div>
     );
 }
 

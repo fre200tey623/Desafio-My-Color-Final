@@ -9,7 +9,7 @@ export default function Form(){
     const [nome,setNome] = useState("")
     const [hexa,setHexadecimal] = useState("")
 
-        function adicionarNovaCor(){ //pelo menos funciona
+        function adicionarNovaCor(){ 
         
             return(
                 axios.post(url,{
@@ -25,7 +25,7 @@ export default function Form(){
         }
 
     return(
-        <div className="">
+        <div>
             <h3 className="text-lg pb-3">Nome personalizado:</h3>
             <input className="border-2 border-zinc-400 rounded-md w-full h-14 mb-6" type="text" placeholder="   ex.: Cor Primaria" name="" id="" onChange={(e)=>setNome(e.target.value)}></input> 
             <h3 className="text-lg pb-3">Hexadecimal:</h3>
