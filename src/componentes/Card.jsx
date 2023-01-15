@@ -1,16 +1,15 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
+import { MyColorContext } from "../MyColorContext";
 
 
-export default function Card({ id, nome, codigoHexa, eFavorito }) {
+export default function Card({ id, nome, codigoHexa, eFavorito, index}) {
 
     const url = "https://my-colors.onrender.com/api/";
 
     const [favorito, setFavorito] = useState(eFavorito)
     const [icon, setIcon] = useState(eFavorito ? "#FF0000" : "#FFFFFF")
-    const [nomeCor,setNomeCor] = useState("")
-    const [hexadecimal, setHexadecimal] = useState("")
-
+    const setId = useContext(MyColorContext);
 
 
     function deletarCor(id) {
@@ -41,24 +40,20 @@ export default function Card({ id, nome, codigoHexa, eFavorito }) {
         })
     }
 
-    function alterarInfoCard(id){
-        return(()=>{
-            axios.patch(`${url}color/${id}`, {})
-            .then(response =>{
 
-            })
-            .catch(error => console.error(error))
-        })
-    }
-
-
+    
     return (
         <div  style={{backgroundColor: codigoHexa}} className="rounded-lg drop-shadow-md" >
+            
             <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-            </svg>
-
+                <button onClick={()=>{setId({index})}}>
+                
+                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                    
+                </svg>
+                </button>
+                
             </div>
             <div className="sm:w-48 w-56 h-28 flex">
                 
@@ -87,7 +82,6 @@ export default function Card({ id, nome, codigoHexa, eFavorito }) {
                 </button>
 
             </div>
-
         </div>
     );
 }
