@@ -4,7 +4,7 @@ export default function Footer(){
 
     return(
         
-            <div className="flex bg-black justify-center absolute bottom-0 left-0 w-full h-20 items-center gap-2">
+            <div className="flex bg-black justify-center absolute bottom-0 w-full h-20 items-center gap-2">
             <h2 className="text-white">Desenvolvido por Andre Lima para o precesso de trainee Softeam</h2>
             <a href="https://github.com/fre200tey623/Desafio-My-Color-Final">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-slate-900">
