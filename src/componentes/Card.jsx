@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useContext} from "react";
 import { MyColorContext } from "../MyColorContext";
 
-
 export default function Card({ id, nome, codigoHexa, eFavorito, index}) {
 
     const url = "https://my-colors.onrender.com/api/";
@@ -10,7 +9,6 @@ export default function Card({ id, nome, codigoHexa, eFavorito, index}) {
     const [favorito, setFavorito] = useState(eFavorito)
     const [icon, setIcon] = useState(eFavorito ? "#FF0000" : "#FFFFFF")
     const setId = useContext(MyColorContext);
-
 
     function deletarCor(id) {
         return (() => {

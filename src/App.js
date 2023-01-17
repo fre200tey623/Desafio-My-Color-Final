@@ -17,8 +17,6 @@ export default function App(){
 
     const [isOpen, setIsOpen] = useState(false)
     const [id,setId] = useState(null)
-   
-    
 
 
     useEffect(()=>{
@@ -35,13 +33,14 @@ export default function App(){
         return <Card key = {data.name} index={index} id={data._id} nome = {data.name} codigoHexa ={data.hex} eFavorito={data.isFavorite}/>
     }
 
-    // console.log(id)
+    
 
     return(
         
        <div>
 
         <MyColorContext.Provider value={setId}>
+            
             <div className="relative">
             <h1 className="pt-4 text-4xl text-center text-gray-800 font-bold">Desafio minhas cores preferidas</h1>
             
@@ -72,15 +71,16 @@ export default function App(){
                 }
             })} */}
             </div>
-
+            
             {id!==null && <div className="absolute flex bg-slate-300/75 w-screen h-screen top-0 justify-center items-center">
                 <div className=" bg-white border  rounded-md drop-shadow-md">
                 <h2 className="pt-8 pb-8 text-center text-2xl font-bold">ALTERAR UMA COR JA EXISTENTE</h2>
                 <div className="ml-20 mr-20">
-               <PopUpCard idAtual={respostaData[id]} />
+               { <PopUpCard dataAtual={respostaData.map(data=>data._id)[id.index]}/>}
                <button className="border w-full rounded-md border-zinc-800 hover:border-red-600 h-14 mb-16 text-zinc-800 hover:text-red-600" onClick={() => setId(null)}>Cancelar</button>
                 </div>
                </div>
+               
             </div>}
             </div>
         </MyColorContext.Provider>
@@ -89,11 +89,11 @@ export default function App(){
             {isOpen && <div className="absolute flex bg-slate-300/75 w-screen h-screen top-0 justify-center items-center">
                
                <div className=" bg-white border  rounded-md drop-shadow-md">
-                <h2 className="pt-8 pb-8 text-center text-2xl font-bold">ADICIONAR UMA NOVA COR</h2>
-               <div className="ml-20 mr-20">
-               <Form />
-               <button className="border w-full rounded-md border-zinc-800 hover:border-red-600 h-14 mb-16 text-zinc-800 hover:text-red-600" onClick={() => setIsOpen(false)}>Cancelar</button>
-                </div>
+                    <h2 className="pt-8 pb-8 text-center text-2xl font-bold">ADICIONAR UMA NOVA COR</h2>
+                    <div className="ml-20 mr-20">
+                        <Form />
+                        <button className="border w-full rounded-md border-zinc-800 hover:border-red-600 h-14 mb-16 text-zinc-800 hover:text-red-600" onClick={() => setIsOpen(false)}>Cancelar</button>
+                    </div>
                </div>
             
             </div>}
