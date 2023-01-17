@@ -40,36 +40,33 @@ export default function App(){
        <div>
 
         <MyColorContext.Provider value={setId}>
+
+            
             
             <div className="relative">
-            <h1 className="pt-4 text-4xl text-center text-gray-800 font-bold">Desafio minhas cores preferidas</h1>
+                <h1 className="pt-4 text-4xl text-center text-gray-800 font-bold pb-3">Desafio minhas cores preferidas</h1>
             
-            <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2">Cores Favoritas:</h2>
-            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5" >
+                <div className="sm:flex xs:block items-center justify-center pt-5 ">
+                <div className="justify-center flex">
+                <h2 className="xs:mr-0 sm:mr-5 text-lg font-semibold text-gray-900 pb-1">Clique no botao para cadastrar uma nova cor</h2>
+                </div>
+                <div className="flex justify-center">
+                <Botao onClick={() => setIsOpen(true)} />
+                </div>
+                </div>
+                
+                
+                <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2">Cores Favoritas:</h2>
+            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 mb-5" >
             {respostaData.filter(data => data.isFavorite === true).map((data)=>criarCard(data, respostaData.indexOf(data)))}
-            {/* { respostaData.forEach(data => {
-                if(data.isFavorite===true){
-                    return criarCard(data,respostaData.indexOf(data))
-                }
-            })} */}
+            
             </div>
-            <div className="sm:flex xs:block items-center justify-center pt-5 ">
-            <div className="justify-center flex">
-            <h2 className="xs:mr-0 sm:mr-5 text-lg font-semibold text-gray-900 pb-1">Clique no botao para cadastrar uma nova cor</h2>
-            </div>
-            <div className="flex justify-center">
-            <Botao onClick={() => setIsOpen(true)} />
-            </div>
-            </div>
+            
             <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2">Cores Cadastradas:</h2>
             
-            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 pb-32 lg:pb-44 ">
+            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 pb-32 lg:pb-44 mb-10 ">
             {respostaData.filter(data => data.isFavorite === false).map((data)=>criarCard(data, respostaData.indexOf(data)))}
-            {/* { respostaData.forEach(data => {
-                if(data.isFavorite===false){
-                    return criarCard(data,respostaData.indexOf(data))
-                }
-            })} */}
+
             </div>
             
             {id!==null && <div className="absolute flex bg-slate-300/75 w-screen h-screen top-0 justify-center items-center">
