@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Desafio-My-Color-Final/static/css/main.fefdfc5e.css",
-    "main.js": "/Desafio-My-Color-Final/static/js/main.d9d81700.js",
+    "main.css": "/Desafio-My-Color-Final/static/css/main.0f253511.css",
+    "main.js": "/Desafio-My-Color-Final/static/js/main.83010453.js",
     "index.html": "/Desafio-My-Color-Final/index.html",
-    "main.fefdfc5e.css.map": "/Desafio-My-Color-Final/static/css/main.fefdfc5e.css.map",
-    "main.d9d81700.js.map": "/Desafio-My-Color-Final/static/js/main.d9d81700.js.map"
+    "main.0f253511.css.map": "/Desafio-My-Color-Final/static/css/main.0f253511.css.map",
+    "main.83010453.js.map": "/Desafio-My-Color-Final/static/js/main.83010453.js.map"
   },
   "entrypoints": [
-    "static/css/main.fefdfc5e.css",
-    "static/js/main.d9d81700.js"
+    "static/css/main.0f253511.css",
+    "static/js/main.83010453.js"
   ]
 }
