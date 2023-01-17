@@ -62,9 +62,9 @@ export default function App(){
             
             </div>
             
-            <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2">Cores Cadastradas:</h2>
+            <h2 className="pl-12 text-xl text-gray-900 font-semibold mb-2 lg:pb-2">Cores Cadastradas:</h2>
             
-            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 pb-32 lg:pb-44 mb-10 ">
+            <div className="grid mr-9 ml-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 pb-32 lg:pb-44 ">
             {respostaData.filter(data => data.isFavorite === false).map((data)=>criarCard(data, respostaData.indexOf(data)))}
 
             </div>
@@ -95,7 +95,7 @@ export default function App(){
             
             </div>}
 
-        <div className="relative">
+        <div className="relative -z-10">
             <Footer />
         </div>
        
