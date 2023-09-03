@@ -24,7 +24,7 @@ export default function PopUpCard({dataAtual}){
     
     return(
         
-        <div>
+        <div className="z-[400]">
         <h3 className="text-lg pb-3">Digite o novo nome:</h3>
         
         <input  className="border-2 border-zinc-400 rounded-md w-full h-14 mb-6" type="text" name="" id="" onChange={(e)=>setNomeCor(e.target.value)}/>
